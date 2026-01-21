@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Sahra ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: linear-gradient(120deg, #ff758c, #ff7eb3);
+      overflow-x: hidden;
+      color: #fff;
+      text-align: center;
+    }
+
+    header {
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+      animation: glow 2s infinite alternate;
+    }
+
+    header p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff; }
+      to { text-shadow: 0 0 20px #ffdde1; }
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      padding: 25px;
+      max-width: 650px;
+      margin: 30px auto;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    .card p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 15px;
+      margin-top: 15px;
+    }
+
+    footer {
+      padding: 30px 10px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    /* Kalp animasyonu */
+    .hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 20px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(0.8);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+
+    /* Müzik butonu */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .music-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    /* Mektup kutusu */
+    .letter-btn {
+      background: rgba(255,255,255,0.25);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .letter-btn:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    .letter-box {
+      display: none;
+      margin-top: 20px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 15px;
+      padding: 20px;
+      font-size: 17px;
+      line-height: 1.7;
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Arka plan kalpleri -->
+  <div class="hearts" id="hearts"></div>
+
+  <!-- Müzik -->
+  <audio id="bgMusic" loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Tarayıcınız ses çalmayı desteklemiyor.
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <header>
+    <h1>Sahra ❤️</h1>
+    <p>
+      Bu site, kalbimin en güzel yerine adını yazan tek kişi için hazırlandı…
+    </p>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>Bizim Hikâyemiz</h2>
+      <p>
+        Sahra, seni tanıdığım günden beri hayatım daha renkli, kalbim daha huzurlu.
+        Gülüşün karanlık günlerimi aydınlatan en güzel ışık oldu.
+        Seninle geçen her an, zamanın durmasını istediğim bir masal gibi…
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>En Güzel Anlarımız</h2>
+      <img src="EC0630A4-B287-4D5B-92A9-9FBD98A85209.jpeg" alt="Biz">
+      <p>
+        Bu fotoğrafa her baktığımda kalbim aynı cümleyi fısıldıyor:
+        “İyi ki sen…”
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Sana Bir Mektubum Var 💌</h2>
+      <button class="letter-btn" onclick="toggleLetter()">Mektubu Aç</button>
+
+      <div class="letter-box" id="letterBox">
+        <p>
+          Zamanın nasıl geçtiğini anlamadan, her günü seninle biraz daha
+          güzelleştirerek geldik buraya. Seninle geçen her an, kalbimde ayrı
+          bir anı, ayrı bir mutluluk olarak yer etti. Gülüşünle aydınlanan
+          günlerim, sesinle huzur bulan gecelerim oldu.
+        </p>
+        <p>
+          Bu 8 ay bana sevmenin ne demek olduğunu yeniden öğretti. Yanımda
+          olduğunda dünya daha kolay, yokluğunda bile kalbim seninle dolu.
+          Sen sadece hayatıma giren biri değil, kalbimin en özel yerini
+          dolduran kişi oldun.
+        </p>
+        <p>
+          İyi ki varsın, iyi ki biz olduk. Daha nice ayları, yılları birlikte,
+          aynı sevgiyle, aynı heyecanla geçirmeyi diliyorum.
+        </p>
+        <p><strong>Seni çok seviyorum. 💖</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>💌 Sonsuz sevgiyle hazırlandı</p>
+  </footer>
+
+  <script>
+    // Kalp oluşturma
+    const heartsContainer = document.getElementById("hearts");
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+      heartsContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 300);
+
+    // Müzik kontrolü
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Mektup aç/kapa
+    function toggleLetter() {
+      const letter = document.getElementById("letterBox");
+      if (letter.style.display === "none" || letter.style.display === "") {
+        letter.style.display = "block";
+      } else {
+        letter.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
