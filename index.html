@@ -63,6 +63,7 @@
       max-width: 100%;
       border-radius: 15px;
       margin-top: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
     footer {
@@ -189,8 +190,9 @@
     </div>
 
     <div class="card">
-      <h2>En Güzel Anlarımız</h2>
-      <img src="EC0630A4-B287-4D5B-92A9-9FBD98A85209.jpeg" alt="Biz">
+      <h2>En Güzel Anımız</h2>
+      <!-- FOTOĞRAF BURADA -->
+      <img src="foto.jpg" alt="Biz">
       <p>
         Bu fotoğrafa her baktığımda kalbim aynı cümleyi fısıldıyor:
         “İyi ki sen…”
@@ -228,7 +230,6 @@
   </footer>
 
   <script>
-    // Kalp oluşturma
     const heartsContainer = document.getElementById("hearts");
 
     function createHeart() {
@@ -247,7 +248,6 @@
 
     setInterval(createHeart, 300);
 
-    // Müzik kontrolü
     const music = document.getElementById("bgMusic");
     let isPlaying = false;
 
@@ -260,7 +260,6 @@
       isPlaying = !isPlaying;
     }
 
-    // Mektup aç/kapa
     function toggleLetter() {
       const letter = document.getElementById("letterBox");
       if (letter.style.display === "none" || letter.style.display === "") {
